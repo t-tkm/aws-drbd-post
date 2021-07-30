@@ -313,6 +313,7 @@ $ exit   #postgresユーザから抜ける
 ※各種詳細は[こちら](https://fio.readthedocs.io/en/latest/index.html)。
 
 以下が、fio設定ファイル(サンプル)となります:
+
 ```:fio.conf
 [global]
 ioengine=libaio
@@ -385,7 +386,7 @@ w_awaitの定義は、[iostat manual](https://man7.org/linux/man-pages/man1/iost
 # 7.まとめ
 共有ディスク方式をDRBDを用いたミラーリング方式に変更し、AWS上に単純リフトした場合の性能を少し実験してみました。結果につきましては、要件次第で「この程度なら問題ないね」や、「ちょっと厳しいかも」など変わるかと思います。また、アーキテクチャ見直しや（クラウドであればもう少しクラウドネイティブな等）、様々なレイヤにおけるチューニング方法もあり([RAIDを使うなど](https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/raid-config.html))、これをもって一概に「性能が悪くなる」と言えないところがエンジニアリングの楽しみかと思います。ではどうすれば良いのか、についきましては追々勉強していきたいと思います。
 
-※測定データは[こちら]()からダウンロードできます。
+※本測定で得られた生データは[こちら](https://github.com/t-tkm/aws-drbd-post/tree/main/perf-results)からダウンロードできます。
 
 # 参考
 - [詳解 システム・パフォーマンス](https://www.amazon.co.jp/dp/4873117909)
